@@ -1,0 +1,189 @@
+{
+  "passed": [
+    "native wrapper recognizes four supported temporary WebExtension fixtures",
+    "metadata lists API permission names, not browsing URLs",
+    "concurrent window attach is idempotent",
+    "fresh Runtime is off with no rules",
+    "Personal Space disables only explicitly assigned fixture",
+    "native disabling shuts down fixture background extension context",
+    "sensitive fixture remains unmanaged by default",
+    "Work A enables content/background, toolbar and developer fixtures natively",
+    "native enabling starts background extension context",
+    "native browser-action widget exists when fixture enabled",
+    "Work B applies configured restriction",
+    "fixture background context is gone after leaving Work A",
+    "native browser-action widget removed when disabled",
+    "Space transitions preserve selected fixture tab, URL and container",
+    "20 real native Space changes converge to latest Space",
+    "fixture extension storage survives native disable/enable cycles",
+    "two real browser windows pause automatic profile-global switching",
+    "multi-window pause never disables an extension another window may use",
+    "opt-in guard disables managed fixture globally in two real browser windows",
+    "multi-window guard leaves unconfigured sensitive fixture untouched",
+    "closing second real window resumes remaining active Space rule",
+    "real private browser window triggers managed global disable without waiting on a private Space model",
+    "closing private browser window resumes normal single-window Space rule",
+    "Tools management dialog opens in browser chrome",
+    "native installed-extension matrix renders all extension rows",
+    "UI displays explicit no-isolation warning",
+    "multi-window privacy guard setting renders saved opt-in",
+    "matrix Save applies edited per-Space rule through native lifecycle",
+    "matrix edit can restore allowed fixture without restart",
+    "matrix Save persists the new multi-window policy choice",
+    "disabling automation restores original enabled state",
+    "fixture disabled while its already-injected page stays selected",
+    "all pre-existing built-in extensions remain unmanaged",
+    "previous injected DOM remains after disable: confirms no isolation / no page reload",
+    "native manual enable is detected and not fought",
+    "reset releases manual state unchanged",
+    "explicit new rule takes ownership only after reset",
+    "own durable configuration journal has owner-only file permissions",
+    "unmanaged native extension states are unchanged",
+    "actual browser shutdown either restores originals or durably freezes automation for recovery",
+    "configuration and stable Space mappings survive actual browser restart",
+    "clean shutdown left no interrupted native mutation journal",
+    "saved explicit automation can resume after clean startup",
+    "original fixture enabled state restored after restarted session",
+    "Sine-style unload removes UI and lifecycle observers",
+    "generated Sine bootstrap resolves versioned module and mounts Tools UI",
+    "awaited Sine bootstrap unload cleans singleton/UI"
+  ],
+  "realProductCompatibilityVerified": false,
+  "liveProfileTouched": false,
+  "nativeMetadata": [
+    {
+      "id": "lifecycle@space-test.invalid",
+      "name": "Lifecycle fixture",
+      "version": "1.0",
+      "type": "extension",
+      "isActive": true,
+      "userDisabled": false,
+      "supported": true,
+      "canEnable": false,
+      "canDisable": true,
+      "apiPermissions": [
+        "storage"
+      ]
+    },
+    {
+      "id": "toolbar@space-test.invalid",
+      "name": "Toolbar fixture",
+      "version": "1.0",
+      "type": "extension",
+      "isActive": true,
+      "userDisabled": false,
+      "supported": true,
+      "canEnable": false,
+      "canDisable": true,
+      "apiPermissions": []
+    },
+    {
+      "id": "developer@space-test.invalid",
+      "name": "Developer fixture",
+      "version": "1.0",
+      "type": "extension",
+      "isActive": true,
+      "userDisabled": false,
+      "supported": true,
+      "canEnable": false,
+      "canDisable": true,
+      "apiPermissions": [
+        "devtools"
+      ]
+    },
+    {
+      "id": "sensitive@space-test.invalid",
+      "name": "Company 1Password fixture (not real product)",
+      "version": "1.0",
+      "type": "extension",
+      "isActive": true,
+      "userDisabled": false,
+      "supported": true,
+      "canEnable": false,
+      "canDisable": true,
+      "apiPermissions": []
+    }
+  ],
+  "rapidSwitchMs": 5149.800999999999,
+  "shutdownOutcome": "restored",
+  "backgroundEvents": [
+    {
+      "kind": "background",
+      "starts": 1
+    },
+    {
+      "kind": "background",
+      "starts": 2
+    },
+    {
+      "kind": "content",
+      "url": "http://127.0.0.1:56563/index.html?enabled=1",
+      "starts": 2,
+      "sentinel": "fixture-preserved"
+    },
+    {
+      "kind": "content",
+      "url": "http://127.0.0.1:56563/index.html?enabled=1",
+      "starts": 2,
+      "sentinel": "fixture-preserved"
+    },
+    {
+      "kind": "background",
+      "starts": 3
+    },
+    {
+      "kind": "content",
+      "url": "http://127.0.0.1:56563/index.html?enabled=1",
+      "starts": 3,
+      "sentinel": "fixture-preserved"
+    },
+    {
+      "kind": "background",
+      "starts": 4
+    },
+    {
+      "kind": "content",
+      "url": "http://127.0.0.1:56563/index.html?enabled=1",
+      "starts": 4,
+      "sentinel": "fixture-preserved"
+    },
+    {
+      "kind": "background",
+      "starts": 5
+    },
+    {
+      "kind": "content",
+      "url": "http://127.0.0.1:56563/index.html?enabled=1",
+      "starts": 5,
+      "sentinel": "fixture-preserved"
+    },
+    {
+      "kind": "background",
+      "starts": 6
+    },
+    {
+      "kind": "content",
+      "url": "http://127.0.0.1:56563/index.html?enabled=1",
+      "starts": 6,
+      "sentinel": "fixture-preserved"
+    },
+    {
+      "kind": "background",
+      "starts": 7
+    },
+    {
+      "kind": "content",
+      "url": "http://127.0.0.1:56563/index.html?enabled=1",
+      "starts": 7,
+      "sentinel": "fixture-preserved"
+    },
+    {
+      "kind": "background",
+      "starts": 8
+    },
+    {
+      "kind": "background",
+      "starts": 10
+    }
+  ]
+}

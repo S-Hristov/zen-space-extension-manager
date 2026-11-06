@@ -1,0 +1,4 @@
+[
+  {"type":"separator","label":"Convenience Mode — NOT security isolation. Configure rules via Tools → Space Extension Manager."},
+  {"type":"checkbox","property":"zen-space-extension-manager.suspend","label":"Emergency suspension: stop automation and restore original extension states globally","defaultValue":false}
+]

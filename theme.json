@@ -1,0 +1,21 @@
+{
+  "id": "zen-space-extension-manager",
+  "name": "Per-Space Extension Manager \u2014 Convenience Mode",
+  "description": "Explicit per-Space extension lifecycle rules, optional multi-window global-disable privacy guard and recovery. Convenience only, NOT security isolation.",
+  "author": "S-Hristov",
+  "version": "0.1.1",
+  "fork": [
+    "zen"
+  ],
+  "supportsUnload": true,
+  "preferences": "preferences.json",
+  "scripts": {
+    "bootstrap.uc.js": {
+      "include": [
+        "chrome://browser/content/browser.xhtml"
+      ]
+    }
+  },
+  "homepage": "https://github.com/S-Hristov/zen-space-extension-manager",
+  "readme": "https://github.com/S-Hristov/zen-space-extension-manager/blob/main/README.md"
+}

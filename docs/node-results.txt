@@ -1,0 +1,207 @@
+
+> zen-space-extension-manager@0.1.1 check
+> npm run build && node --check bootstrap.uc.js && npm test
+
+
+> zen-space-extension-manager@0.1.1 build
+> node scripts/build.mjs
+
+
+> zen-space-extension-manager@0.1.1 test
+> node --test tests/*.test.mjs
+
+TAP version 13
+# Subtest: adapter rejects policy/system/privileged/hidden/blocklisted/incompatible/pending/restart states
+ok 1 - adapter rejects policy/system/privileged/hidden/blocklisted/incompatible/pending/restart states
+  ---
+  duration_ms: 0.896875
+  ...
+# Subtest: adapter native permission flags are honored and expected-state races rejected
+ok 2 - adapter native permission flags are honored and expected-state races rejected
+  ---
+  duration_ms: 0.57225
+  ...
+# Subtest: adapter only requests names/flags/API permission metadata and has no runtime install/storage operations
+ok 3 - adapter only requests names/flags/API permission metadata and has no runtime install/storage operations
+  ---
+  duration_ms: 0.568959
+  ...
+# Subtest: fresh install makes no extension or persistent-state change
+ok 4 - fresh install makes no extension or persistent-state change
+  ---
+  duration_ms: 1.317625
+  ...
+# Subtest: explicit per-Space rules use stable IDs and only needed native changes
+ok 5 - explicit per-Space rules use stable IDs and only needed native changes
+  ---
+  duration_ms: 2.3475
+  ...
+# Subtest: globally enabled state does not imply isolation and sensitive rules require acknowledgement
+ok 6 - globally enabled state does not imply isolation and sensitive rules require acknowledgement
+  ---
+  duration_ms: 0.7065
+  ...
+# Subtest: rapid 20 Space switches converge to newest intent without concurrent operations
+ok 7 - rapid 20 Space switches converge to newest intent without concurrent operations
+  ---
+  duration_ms: 4.617917
+  ...
+# Subtest: new window appearing in-flight undoes owned disables, then pauses
+ok 8 - new window appearing in-flight undoes owned disables, then pauses
+  ---
+  duration_ms: 0.69825
+  ...
+# Subtest: multi-window pause NEVER disables an extension another window may be using
+ok 9 - multi-window pause NEVER disables an extension another window may be using
+  ---
+  duration_ms: 0.458416
+  ...
+# Subtest: private or unready windows block automatic switching
+ok 10 - private or unready windows block automatic switching
+  ---
+  duration_ms: 0.260459
+  ...
+# Subtest: manual extension changes win, are not fought, and reset keeps manual state
+ok 11 - manual extension changes win, are not fought, and reset keeps manual state
+  ---
+  duration_ms: 0.369
+  ...
+# Subtest: reset ordinary rule restores its original state and no other ownership is lost
+ok 12 - reset ordinary rule restores its original state and no other ownership is lost
+  ---
+  duration_ms: 0.931542
+  ...
+# Subtest: startup interrupted-operation journal restores original states and disables automation
+ok 13 - startup interrupted-operation journal restores original states and disables automation
+  ---
+  duration_ms: 0.560292
+  ...
+# Subtest: startup journal with native mutation not yet applied produces no unnecessary toggle
+ok 14 - startup journal with native mutation not yet applied produces no unnecessary toggle
+  ---
+  duration_ms: 0.216291
+  ...
+# Subtest: normal stop restores original disabled baseline while preserving saved opt-in for next clean startup
+ok 15 - normal stop restores original disabled baseline while preserving saved opt-in for next clean startup
+  ---
+  duration_ms: 0.293208
+  ...
+# Subtest: native failure stops automation and restores completed partial changes once
+ok 16 - native failure stops automation and restores completed partial changes once
+  ---
+  duration_ms: 0.612708
+  ...
+# Subtest: journal write failure prevents extension mutation and freezes future automation
+ok 17 - journal write failure prevents extension mutation and freezes future automation
+  ---
+  duration_ms: 0.18
+  ...
+# Subtest: corrupt/unknown state is not overwritten or used to disable extensions
+ok 18 - corrupt/unknown state is not overwritten or used to disable extensions
+  ---
+  duration_ms: 0.166209
+  ...
+# Subtest: missing Spaces block rules, unsupported add-ons are untouched, no default deny
+ok 19 - missing Spaces block rules, unsupported add-ons are untouched, no default deny
+  ---
+  duration_ms: 0.269333
+  ...
+# Subtest: emergency Sine suspension restores originals, resume only affects explicit rules
+ok 20 - emergency Sine suspension restores originals, resume only affects explicit rules
+  ---
+  duration_ms: 0.317291
+  ...
+# Subtest: all/deny rules and sensitive detection remain explicit
+ok 21 - all/deny rules and sensitive detection remain explicit
+  ---
+  duration_ms: 0.101709
+  ...
+# Subtest: corrupt state stays byte-equivalent even on reset, recovery, configuration and unload
+ok 22 - corrupt state stays byte-equivalent even on reset, recovery, configuration and unload
+  ---
+  duration_ms: 0.153292
+  ...
+# Subtest: lost Space or revoked sensitive acknowledgement restores owned disable and stops automation
+ok 23 - lost Space or revoked sensitive acknowledgement restores owned disable and stops automation
+  ---
+  duration_ms: 0.8385
+  ...
+# Subtest: failed reset restoration retains durable recovery gate; explicit recovery retries once
+ok 24 - failed reset restoration retains durable recovery gate; explicit recovery retries once
+  ---
+  duration_ms: 0.34375
+  ...
+# Subtest: unknown active Space pauses instead of applying a deny default
+ok 25 - unknown active Space pauses instead of applying a deny default
+  ---
+  duration_ms: 0.086458
+  ...
+# Subtest: rules stay saved through clean restart and original baselines are recaptured
+ok 26 - rules stay saved through clean restart and original baselines are recaptured
+  ---
+  duration_ms: 0.346291
+  ...
+# Subtest: queued off request compensates an already-running native disable
+ok 27 - queued off request compensates an already-running native disable
+  ---
+  duration_ms: 2.855625
+  ...
+# Subtest: configuration drops unrecognized fields instead of persisting arbitrary input
+ok 28 - configuration drops unrecognized fields instead of persisting arbitrary input
+  ---
+  duration_ms: 0.082667
+  ...
+# Subtest: privacy guard disables an owned enable across two windows and resumes current Space rule
+ok 29 - privacy guard disables an owned enable across two windows and resumes current Space rule
+  ---
+  duration_ms: 0.517541
+  ...
+# Subtest: privacy guard does not blindly restore ON in a different remaining Space
+ok 30 - privacy guard does not blindly restore ON in a different remaining Space
+  ---
+  duration_ms: 0.279208
+  ...
+# Subtest: privacy guard covers private/Little-Zen-counted windows, and never touches unmanaged extensions
+ok 31 - privacy guard covers private/Little-Zen-counted windows, and never touches unmanaged extensions
+  ---
+  duration_ms: 0.695625
+  ...
+# Subtest: privacy guard requires critical acknowledgement and honors manual overrides
+ok 32 - privacy guard requires critical acknowledgement and honors manual overrides
+  ---
+  duration_ms: 0.368208
+  ...
+# Subtest: guard failure freezes automation without re-enabling completed disables or retrying
+ok 33 - guard failure freezes automation without re-enabling completed disables or retrying
+  ---
+  duration_ms: 0.496708
+  ...
+# Subtest: interrupted guard startup retains journal without automatic broad re-enable
+ok 34 - interrupted guard startup retains journal without automatic broad re-enable
+  ---
+  duration_ms: 0.217583
+  ...
+# Subtest: privacy guard keeps disables during unknown window model and serializes rapid window churn
+ok 35 - privacy guard keeps disables during unknown window model and serializes rapid window churn
+  ---
+  duration_ms: 0.274208
+  ...
+# Subtest: old configurations migrate to availability-preserving pause; invalid guard mode rejected
+ok 36 - old configurations migrate to availability-preserving pause; invalid guard mode rejected
+  ---
+  duration_ms: 0.078792
+  ...
+# Subtest: privacy-guard errors remain held through normal Sine/browser unload until explicit review
+ok 37 - privacy-guard errors remain held through normal Sine/browser unload until explicit review
+  ---
+  duration_ms: 0.297583
+  ...
+1..37
+# tests 37
+# suites 0
+# pass 37
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 104.440167
